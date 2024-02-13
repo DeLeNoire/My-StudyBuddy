@@ -1,0 +1,11 @@
+Model Information:
+* title:	The John Rylands Library - Blueprint Model
+* source:	https://sketchfab.com/3d-models/the-john-rylands-library-blueprint-model-0f4827805a554efca782eea8a2701a23
+* author:	The John Rylands Research Institute and Library (https://sketchfab.com/TheJohnRylandsLibrary)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "The John Rylands Library - Blueprint Model" (https://sketchfab.com/3d-models/the-john-rylands-library-blueprint-model-0f4827805a554efca782eea8a2701a23) by The John Rylands Research Institute and Library (https://sketchfab.com/TheJohnRylandsLibrary) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
