@@ -1,13 +1,29 @@
 /* eslint-disable @next/next/no-img-element */
+'use client'
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFighterJet, faFile, faHouse } from '@fortawesome/free-solid-svg-icons'; // Add this import statement
 import { ModeToggle } from './mode-toggle';
+import { useEffect, useState } from 'react';
 
-const Sidebar= () => {
+const Sidebar=() => {
+    const[showSidebar , setShowSidebar] = useState(false);
+    useEffect(()=>{
+        const handleMouseMove=(event: { clientX: number; })=>{
+            if(event.clientX <= 50){
+                setShowSidebar(true);
+            }else{
+                setShowSidebar(false);
+            }
+        }
+        document.addEventListener('mousemove' , handleMouseMove);
+        return()=>{
+            document.removeEventListener('mousemove' , handleMouseMove);
+        }
+    },[])
     return(
-        <nav className="mt-12 ml-1 fixed h-full z-10">
-            <div className='mx-auto mb-4 flex w-6 h-4/5 md:h-5/6 justify-center space-x-2 overflow-hidden rounded-full border border-gray-200 bg-white px-5 py-2 shadow-md backdrop:blur transition-all hover:border-gray-300 hover:bg-white/50'>
+        <nav className={`mt-12 ml-1 fixed h-full z-10 ${showSidebar ? '' : 'hidden'}`}>
+            <div className={`mx-auto mb-4 flex w-6 h-4/5 md:h-5/6 justify-center space-x-2 overflow-hidden rounded-full border border-gray-200 bg-white px-5 py-2 shadow-md backdrop:blur transition-all hover:border-gray-300 hover:bg-white/50 ${showSidebar ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-full'}`}>
             <div className="flex flex-col items-center mt-8">
                 <Link href="/" className="text-white my-4"> 
                 <FontAwesomeIcon icon={faHouse} className='w-6 h-5 text-black' />
