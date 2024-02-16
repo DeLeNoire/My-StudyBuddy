@@ -34,11 +34,11 @@ const Sidebar=() => {
                 <Link href="/Notes" className="text-white my-4">
                 <FontAwesomeIcon icon={faFighterJet} className='w-6 h-5 text-black' />
                 </Link>
-                <div className='absolute inset-x-0 bottom-24 md:bottom-20'>
+            </div>
+            </div>
+                <div className='absolute inset-x-0 bottom-26'>
                 <ModeToggle/>
                 </div>
-            </div>
-            </div>
         </nav>   
         )
     }
