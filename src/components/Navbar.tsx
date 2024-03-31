@@ -1,84 +1,70 @@
-// import Link from 'next/link'
-// import { buttonVariants } from './ui/button'
-// import {
-//   LoginLink,
-//   RegisterLink,
-//   getKindeServerSession,
-// } from '@kinde-oss/kinde-auth-nextjs/server'
-// import { ArrowRight } from 'lucide-react'
-// import UserAccountNav from './UserAccountNav'
-// import MobileNav from './MobileNav'
-// import CommonLayout from './CommonLayout'
+'use client'
+import { cn } from "@/lib/utils";
+import { HoveredLink, Menu, MenuItem, ProductItem } from "./ui/navbar-menu";
+import { useState } from "react";
+import { ModeToggle } from "./mode-toggle";
 
-// const Navbar = () => {
-//   const { getUser } = getKindeServerSession()
-//   const user = getUser()
-
-//   return (
-//     <nav className='sticky h-14 inset-x-0 top-0 z-30 w-full border-b border-gray-200 bg-white/75 backdrop-blur-lg transition-all'>
-//       <CommonLayout>
-//         <div className='flex h-14 items-center justify-between border-b border-zinc-200'>
-//           <Link
-//             href='/DocsChat'
-//             className='flex z-40 font-semibold'>
-//             <span>Docs-Chat.</span>
-//           </Link>
-
-//           <MobileNav isAuth={!!user} />
-
-//           <div className='hidden items-center space-x-4 sm:flex'>
-//             {!user ? (
-//               <>
-//                 <Link
-//                   href='/pricing'
-//                   className={buttonVariants({
-//                     variant: 'ghost',
-//                     size: 'sm',
-//                   })}>
-//                   Pricing
-//                 </Link>
-//                 <LoginLink
-//                   className={buttonVariants({
-//                     variant: 'ghost',
-//                     size: 'sm',
-//                   })}>
-//                   Sign in
-//                 </LoginLink>
-//                 <RegisterLink
-//                   className={buttonVariants({
-//                     size: 'sm',
-//                   })}>
-//                   Get started{' '}
-//                   <ArrowRight className='ml-1.5 h-5 w-5' />
-//                 </RegisterLink>
-//               </>
-//             ) : (
-//               <>
-//                 <Link
-//                   href='/dashboard'
-//                   className={buttonVariants({
-//                     variant: 'ghost',
-//                     size: 'sm',
-//                   })}>
-//                   Dashboard
-//                 </Link>
-
-//                 <UserAccountNav
-//                   name={
-//                     !user.given_name || !user.family_name
-//                       ? 'Your Account'
-//                       : `${user.given_name} ${user.family_name}`
-//                   }
-//                   email={user.email ?? ''}
-//                   imageUrl={user.picture ?? ''}
-//                 />
-//               </>
-//             )}
-//           </div>
-//         </div>
-//       </CommonLayout>
-//     </nav>
-//   )
-// }
-
-// export default Navbar
+export default function Navbar({ className }: { className?: string }) {
+    const [active, setActive] = useState<string | null>(null);
+    return (
+      <div
+        className={cn("fixed top-10 inset-x-2 max-w-2xl mx-auto z-50", className)}
+      >
+        <Menu setActive={setActive} >
+          <MenuItem setActive={setActive} active={active} item="Projects">
+            <div className="  text-sm grid grid-cols-2 gap-10 p-4">
+              <ProductItem
+                title="Algochurn"
+                href="https://algochurn.com"
+                src=""
+                description="Prepare for tech interviews like never before."
+              />
+              <ProductItem
+                title="Algochurn"
+                href="https://algochurn.com"
+                src=""
+                description="Prepare for tech interviews like never before."
+              />
+              <ProductItem
+                title="Tailwind Master Kit"
+                href="https://tailwindmasterkit.com"
+                src=""
+                description="Production ready Tailwind css components for your next project"
+              />
+              <ProductItem
+                title="Moonbeam"
+                href="https://gomoonbeam.com"
+                src=""
+                description="Never write from scratch again. Go from idea to blog in minutes."
+              />
+              <ProductItem
+                title="Rogue"
+                href="https://userogue.com"
+                src=""
+                description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
+              />
+            </div>
+          </MenuItem>
+          <MenuItem setActive={setActive} active={active} item="Services">
+            <div className="flex flex-col space-y-4 text-sm">
+              <HoveredLink href="/web-dev">Web Development</HoveredLink>
+              <HoveredLink href="/interface-design">Interface Design</HoveredLink>
+              <HoveredLink href="/seo">Search Engine Optimization</HoveredLink>
+              <HoveredLink href="/branding">Branding</HoveredLink>
+            </div>
+          </MenuItem>
+          <MenuItem setActive={setActive} active={active} item="Pricing">
+            <div className="flex flex-col space-y-4 text-sm">
+              <HoveredLink href="/hobby">Hobby</HoveredLink>
+              <HoveredLink href="/individual">Individual</HoveredLink>
+              <HoveredLink href="/team">Team</HoveredLink>
+              <HoveredLink href="/enterprise">Enterprise</HoveredLink>
+            </div>
+          </MenuItem>
+          <HoveredLink href="/branding">Branding</HoveredLink>
+        </Menu>
+      </div>
+    );
+  }
+  
+  
