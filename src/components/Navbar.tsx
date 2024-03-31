@@ -14,8 +14,8 @@ export default function Navbar({ className }: { className?: string }) {
           <MenuItem setActive={setActive} active={active} item="Projects">
             <div className="  text-sm grid grid-cols-2 gap-10 p-4">
               <ProductItem
-                title="Algochurn"
-                href="https://algochurn.com"
+                title="Vercel Clone"
+                href="/vercelclone"
                 src=""
                 description="Prepare for tech interviews like never before."
               />
