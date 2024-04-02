@@ -1,7 +1,6 @@
 
 import Image from "next/image";
 import { Tabs } from "./ui/tabs";
-import Link from "next/link";
 
 
 export function TabsProjects() {
@@ -93,11 +92,19 @@ const DummyContent = () => {
 
 export function MWVideo() {
   return (
-    <video width="1000" height="1000" controls preload="true" muted loop className="object-cover object-left-top h-[60%] md:h-[90%] absolute -bottom-10 inset-x-0 w-[90%] rounded-xl mx-auto">
-      <source src="/videos/3DMultiWindowVid.mp4" type="video/mp4" />
-    </video>
+    <Image
+      src="/Images/vercelimg.png"
+      alt="dummy image"
+      width="1000"
+      height="1000"
+      className="object-cover object-left-top h-[60%]  md:h-[90%] absolute -bottom-10 inset-x-0 w-[90%] rounded-xl mx-auto"
+    />
   )
 }
+
+{/* <video width="1000" height="1000" controls preload="true" muted loop className="object-cover object-left-top h-[60%] md:h-[90%] absolute -bottom-10 inset-x-0 w-[90%] rounded-xl mx-auto">
+      <source src="/videos/3DMultiWindowVid.mp4" type="video/mp4" />
+    </video> */}
 
 const Replit = () => {
   return (
